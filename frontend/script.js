@@ -2,8 +2,12 @@
 // RetroBot98 - Frontend Mantığı (Vanilla JS)
 // ============================================================================
 
-// Backend adresi. Backend'i farklı bir portta çalıştırırsan burayı güncelle.
-const API_URL = "http://127.0.0.1:8000/chat";
+// Backend adresi. Yerelde ayrı bir portta çalışan FastAPI'ye, canlıda ise
+// (Vercel) aynı origin'deki /api/chat serverless fonksiyonuna gider.
+const YEREL_HOST = ["localhost", "127.0.0.1", ""].includes(location.hostname);
+const API_URL = YEREL_HOST
+  ? "http://127.0.0.1:8000/chat"
+  : "/api/chat";
 
 const chatMessages = document.getElementById("chat-messages");
 const userInput = document.getElementById("user-input");
