@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backend",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "cd backend && exec /Users/idristevfikgulec/PycharmProjects/RetroChatbotProject/.venv/bin/python -m uvicorn main:app --reload --port 8000"],
+      "port": 8000
+    },
+    {
+      "name": "frontend",
+      "runtimeExecutable": "/Users/idristevfikgulec/PycharmProjects/RetroChatbotProject/.venv/bin/python",
+      "runtimeArgs": ["-m", "http.server", "5500", "--directory", "frontend"],
+      "port": 5500
+    }
+  ]
+}
